@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { setPageScore , setUserAnswer } from '../store/actions/pageAction';
 import { useDispatch } from 'react-redux';
 import { Button, Container } from 'react-bootstrap';
-import Toast from '../helpers'
+import Toast from '../helpers';
+import instagram from '../assets/ten/instagram.png'
+import line from '../assets/ten/line.png'
+import microsoft from '../assets/ten/microsoft.jpg'
+import oculus from '../assets/ten/oculus.jpg'
 
 const Ten = () => {
     const dispatch = useDispatch();
@@ -46,19 +50,17 @@ const Ten = () => {
         } else {
             dispatch(setPageScore(false));
         }
-        console.log(clonedAnswer,'ini cloe');
 
         if(clonedAnswer.length === 2) {
-            console.log('masuk');
             dispatch(setUserAnswer(true))
         }
     }
 
     const options = [
-        'https://www.freepnglogos.com/uploads/instagram-logo-png-transparent-png-27.png',
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/LINE_logo.svg/768px-LINE_logo.svg.png',
-        'https://thedesignlove.com/wp-content/uploads/2018/02/Case-Study-The-Microsoft-Logo-Evolution-5.jpg',
-        'https://cdn.hipwallpaper.com/i/4/64/WIcZRs.jpg']
+        instagram,
+        line,
+        microsoft,
+        oculus]
 
     const divOptions = () => {
 
@@ -70,10 +72,10 @@ const Ten = () => {
                 onClick={() => handleChange(i)}
                 className="mt-3 col-5 mx-3"
                 variant={
-                    (pageAnswer.includes(i)) ? 'outline-success' : ''
+                    (pageAnswer.includes(i)) ? 'outline-success' : 'outline-secondary'
                 }
                 >
-                    <span><img src={el} style={{width:150,height:135,objectFit:'cover'}} alt=""/></span>
+                    <span><img src={el} className="ten" alt=""/></span>
                 </Button>
             )
         })
@@ -81,12 +83,10 @@ const Ten = () => {
     }
 
     return (
-        <Container className="" style={{height:'50vh'}}>
-           <Container className="d-flex justify-content-center">
-                <h5> Pilihlah dua jawaban yang paling benar </h5>
-           </Container>
+        <Container>
+           <h1 className="text-center pilih" > PILIH DUA </h1>           
            <Container className="d-flex justify-content-center mb-0">
-                <h6> Yang termasuk merger dalam satu group perusahaan adalah </h6>
+                <h4> Perusahaan yang bekerja sama adalah </h4>
             </Container>
            <Container className="row ml-2">
                {divOptions()}

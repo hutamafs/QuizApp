@@ -4,7 +4,7 @@ import { Container , Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom'
 
 const Finish = () => {
-    const { score } = useSelector(state=>state);
+    const { score , name } = useSelector(state=>state);
     const history = useHistory();
 
     const handleBack = () => {
@@ -17,17 +17,17 @@ const Finish = () => {
                 <img 
                 src={(score>=8) ?
                 'https://cdn.dribbble.com/users/311928/screenshots/6574034/congrats1_4x.png' : 
-                'https://lh3.googleusercontent.com/proxy/SeTF5rO1ZSSn2B9sZa3CJ3l7_Z-JzS87na6wKeMrndf6WKTE91_XEOgxqJwMSY7zntgTB1Oo7je28fSvASlrZ93Oap5fPhIuH2d32_likv1avqwcLN0e4XWe5j-bTg'
+                'https://i.pinimg.com/originals/7f/b1/f1/7fb1f193435815a86c8484f82b9589e1.jpg'
                 }
-                style={{width:400,height:400}}
+                style={{width:500,height:400}}
                 alt=""
                 />
             </Container>
             <Container>
                 {
                     (score>=8) ?
-                    <h4>Selamat!! jawaban kamu benar {score} dari 10 </h4> :
-                    <h4>Coba lagi ya .. jawaban kamu hanya benar {score} dari 10 </h4> 
+                    <h4>Selamat {name} !! jawaban kamu benar {score} dari 10 </h4> :
+                    <h4>Coba lagi ya {name} .. jawaban kamu hanya benar {score} dari 10 </h4> 
                 }
             </Container>
             <Container>

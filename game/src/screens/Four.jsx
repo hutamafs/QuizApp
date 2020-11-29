@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { setPageScore , setUserAnswer } from '../store/actions/pageAction';
 import { useDispatch } from 'react-redux';
 import { Container } from 'react-bootstrap';
+import bali from '../assets/bali.jpg';
 
 const Three = () => {
     const dispatch = useDispatch();
-    const [answer] = useState('tokyo')
+    const [answer] = useState('bali')
     const [pageAnswer , setPageAnswer] = useState('');
 
     const handleChange = (e) => {
@@ -22,12 +23,13 @@ const Three = () => {
     }
 
     return (
-        <Container className="bg-secondary" style={{height:'50vh'}}>
-           <Container className="d-flex justify-content-center border">
-                <h4> Ibukota jepang </h4>
+        <Container>
+           <Container className="d-flex justify-content-center">
+                <h3> Dimanakah tempat ini? </h3>
            </Container>
+           <img src={bali} id="bali" alt=""/>
            <Container className="d-flex justify-content-center mt-5">
-                <input type="text" value={pageAnswer} placeholder="your answer" onChange={(e) => handleChange(e)} className="text-center" />
+                <input type="text" value={pageAnswer} placeholder="your answer" onChange={(e) => handleChange(e)} className="input-type text-center" />
            </Container>
         </Container>
     )

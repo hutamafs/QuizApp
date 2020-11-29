@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { setPageScore , setUserAnswer } from '../store/actions/pageAction';
 import { useDispatch } from 'react-redux';
 import { Button, Container } from 'react-bootstrap';
+import '../styles/input.css';
 
 const Six = () => {
     const dispatch = useDispatch();
@@ -37,10 +38,10 @@ const Six = () => {
                 onClick={() => handleChange(i)}
                 className="mt-4 col-5 mx-3"
                 variant={
-                    (pageAnswer === i) ? 'outline-success' : ''
+                    (pageAnswer === i) ? 'outline-success' : 'outline-dark'
                 }
                 >
-                    <span><img src={el} style={{width:150,height:150,objectFit:'cover'}} alt=""/></span>
+                    <img src={el} className="pr-2 six" alt=""/>
                 </Button>
             )
         })
@@ -48,8 +49,8 @@ const Six = () => {
     }
 
     return (
-        <Container className="" style={{height:'50vh'}}>
-           <Container className="d-flex justify-content-center border">
+        <Container>
+           <Container className="d-flex justify-content-center">
                 <h4> Youtuber dengan subscriber terbanyak </h4>
            </Container>
            <Container className="row ml-2">

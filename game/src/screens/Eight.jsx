@@ -19,8 +19,8 @@ const Eight = () => {
     }
 
     const options = [
-        'Archimedes',
-        'Relativitas',
+        'Einstein',
+        'Pascal',
         'Boyle',
         'Newton']
 
@@ -34,7 +34,7 @@ const Eight = () => {
                 onClick={() => handleChange(i)}
                 className="mt-2 mx-3 col-5 my-3"
                 variant={
-                    (pageAnswer === i) ? 'outline-success' : 'outline-light'
+                    (pageAnswer === i) ? 'outline-success' : 'outline-dark'
                 }
                 >
                     <span style={{fontSize:'2rem'}}> {el} </span>
@@ -45,10 +45,10 @@ const Eight = () => {
     }
 
     return (
-        <Container className="" style={{height:'50vh'}}>
+        <Container>
            <Container className="d-flex flex-column justify-content-center" style={{marginLeft:40}}>
-           <img src="https://lh3.googleusercontent.com/proxy/iSwYg7sbhX1iGP_jw_5AB3NlhJgPU6zs9XXcusgjcJjf7PNQ7JLkm4_2ZcQsIdY1pwsk2NCc-KqFfMLrBcb4A-xcFCARWm4_BGmPZEuvrAZUyp-KsSUd4ZpD1BlIBkMJayOLaHoM" style={{width:350,height:200,objectFit:'cover'}} alt=""/>
-           <h3 className="mt-2 ml-3">Bunyi hukum apakah ini?</h3>
+           <img id="einstein" src="https://www.nuclear-power.net/wp-content/uploads/2014/10/emc2-1024x666.png" alt=""/>
+           <h3 className="mt-2 ml-3">Siapa pencipta rumus ini?</h3>
            </Container>
            <Container className="row ml-2">
                {divOptions()}

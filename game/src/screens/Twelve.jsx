@@ -64,10 +64,10 @@ const Eleven = () => {
                 onClick={() => handleChange(i)}
                 className="mt-3 col-5 mx-3"
                 variant={
-                    (pageAnswer.includes(i)) ? 'outline-success' : ''
+                    (pageAnswer.includes(i)) ? 'outline-success' : 'outline-dark'
                 }
                 >
-                    <span><img src={el} style={{width:150,height:150,objectFit:'cover'}} alt=""/></span>
+                    <span><img className="pr-2 twelve"  src={el} alt=""/></span>
                 </Button>
             )
         })
@@ -75,14 +75,10 @@ const Eleven = () => {
     }
 
     return (
-        <Container className="" style={{height:'50vh'}}>
-           <Container className="d-flex justify-content-center">
-                <h5> Pilihlah dua jawaban yang paling benar </h5>
-           </Container>
-           <Container className="d-flex justify-content-center mb-0">
-                <h6> Yang bukan termasuk keajaiban dunia </h6>
-            </Container>
-           <Container className="row ml-2">
+        <Container style={{position:'relative'}}>
+            <h1 className="text-center pilih"> PILIH DUA </h1>           
+            <p className="text-center mb-0" style={{fontSize:'1.65rem'}}> Yang <b>bukan</b> termasuk keajaiban dunia </p>            
+           <Container className="row" style={{position:'absolute',right:20}}>
                {divOptions()}
            </Container>
         </Container>

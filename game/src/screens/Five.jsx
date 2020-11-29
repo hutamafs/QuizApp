@@ -15,10 +15,7 @@ const Five = () => {
         } else {
             dispatch(setPageScore(false));
         }
-
-        if(v) {
-            dispatch(setUserAnswer(v))
-        }
+        dispatch(setUserAnswer(v));       
     }
 
     const options = [12.03,1.85,13.7,5.678]
@@ -30,21 +27,22 @@ const Five = () => {
                 <Button
                 key={i}
                 className="mt-4 col-5 mx-3"
+                style={{height:100}}
                 variant={
-                    (pageAnswer === i) ? 'outline-success' : 'outline-light'
+                    (pageAnswer === i) ? 'outline-success' : 'outline-dark'
                 }
-                value={i} onClick={() => handleChange(i)} > {el} </Button>
+            value={i} onClick={() => handleChange(i)} > <h3>{el}</h3> </Button>
             )
         })
         return arr;
     }
 
     return (
-        <Container className="" style={{height:'50vh'}}>
-           <Container className="d-flex justify-content-center border">
+        <Container className="fill-container">
+           <Container className="d-flex justify-content-center">
                 <h4> Bilangan manakah yang terbesar? </h4>
            </Container>
-           <Container className="row d-flex justify-content-center">
+           <Container className="row d-flex justify-content-center ml-2">
                {divOptions()}
            </Container>
         </Container>

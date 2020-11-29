@@ -15,10 +15,7 @@ const Nine = () => {
         } else {
             dispatch(setPageScore(false));
         }
-
-        if(v) {
-            dispatch(setUserAnswer(v))
-        }
+        dispatch(setUserAnswer(v))        
     }
 
     const options = [
@@ -37,10 +34,10 @@ const Nine = () => {
                 onClick={() => handleChange(i)}
                 className="mt-3 col-5 mx-3"
                 variant={
-                    (pageAnswer === i) ? 'outline-success' : 'outline-light'
+                    (pageAnswer === i) ? 'outline-success' : 'outline-dark'
                 }
                 >
-                    <span><img src={el} style={{width:150,height:150,objectFit:'cover'}} alt=""/></span>
+                    <img src={el} className="nine" alt=""/>
                 </Button>
             )
         })
@@ -48,9 +45,9 @@ const Nine = () => {
     }
 
     return (
-        <Container className="" style={{height:'50vh'}}>
+        <Container>
            <Container className="d-flex justify-content-center">
-                <h4> Bahan baku minyak goreng </h4>
+                <h2> Bahan baku minyak goreng </h2>
            </Container>
            <Container className="row ml-2">
                {divOptions()}

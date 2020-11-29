@@ -22,12 +22,12 @@ const One = () => {
     }
 
     return (
-        <Container className="bg-secondary" style={{height:'30vh'}}>
-           <Container className="d-flex justify-content-center border">
+        <Container className="fill-container">
+           <Container className="d-flex justify-content-center">
                 <h2>Apakah hasil dari 4 x 3 - 2 : 2</h2>
            </Container>
            <Container className="d-flex justify-content-center mt-5">
-                <input type="number" value={pageAnswer} placeholder="your answer" onChange={(e) => handleChange(e)} className="text-center" />
+                <input type="number" value={pageAnswer} placeholder="your answer" onChange={(e) => handleChange(e)} className="text-center input-type" />
            </Container>
         </Container>
     )

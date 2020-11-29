@@ -33,8 +33,9 @@ const Seven = () => {
                 value={i}
                 onClick={() => handleChange(i)}
                 className="mt-3 mx-3 col-5"
+                style={{height:100}}
                 variant={
-                    (pageAnswer === i) ? 'outline-success' : 'outline-light'
+                    (pageAnswer === i) ? 'outline-success' : 'outline-secondary'
                 }
                 >
                     {el}
@@ -45,12 +46,12 @@ const Seven = () => {
     }
 
     return (
-        <Container className="" style={{height:'50vh'}}>
+        <Container>
            <Container className="d-flex flex-column justify-content-center" style={{marginLeft:60}}>
-           <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg" style={{width:300,height:150,objectFit:'cover'}} alt=""/>
+           <img id="australia" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Flag_of_New_Zealand.svg" alt=""/>
            <h3 className="mt-2">Lambang negara apa ini?</h3>
            </Container>
-           <Container className="row ml-2">
+           <Container className="row ml-1">
                {divOptions()}
            </Container>
         </Container>

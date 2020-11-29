@@ -62,12 +62,12 @@ const Eleven = () => {
                 key={i}
                 value={i}
                 onClick={() => handleChange(i)}
-                className="mt-3 col-5 mx-3"
+                className="my-3 col-5 mx-3"
                 variant={
-                    (pageAnswer.includes(i)) ? 'outline-success' : ''
+                    (pageAnswer.includes(i)) ? 'outline-success' : 'outline-dark'
                 }
                 >
-                    <span><img src={el} style={{width:150,height:135,objectFit:'cover'}} alt=""/></span>
+                    <span><img src={el} className="eleven" alt=""/></span>
                 </Button>
             )
         })
@@ -75,12 +75,11 @@ const Eleven = () => {
     }
 
     return (
-        <Container className="" style={{height:'50vh'}}>
-           <Container className="d-flex justify-content-center">
-                <h5> Pilihlah dua jawaban yang paling benar </h5>
-           </Container>
+        <Container>
+           <h1 className="text-center pilih" > PILIH DUA </h1>  
+           
            <Container className="d-flex justify-content-center mb-0">
-                <h6> Yang termasuk logo bahasa programming adalah </h6>
+                <h4> Yang merupakan Bahasa Programming </h4>
             </Container>
            <Container className="row ml-2">
                {divOptions()}

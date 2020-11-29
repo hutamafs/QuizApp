@@ -1,0 +1,64 @@
+.input-type {
+    border-radius:5%;
+    width:300;
+    height:75;
+    font-size:2rem
+}
+
+.fill-container {
+    height:30vh;
+    padding-top:120px
+}
+
+#bali {
+    width:65;
+    height:30vh;
+    margin-left:50px
+}
+
+.six {
+    width:165px;
+    height:165px;
+    object-fit: cover;
+}
+
+#australia {
+    width:300px;
+    height:150px;
+    object-fit:cover
+}
+
+#einstein {
+    width:350px;
+    height:200px;
+    object-fit:cover
+}
+
+.nine {
+    width:160px;
+    height:180px;
+    object-fit:cover
+}
+
+.pilih {
+    font-size:2rem;
+    color:red
+}
+
+.ten {
+    width:150px;
+    height:135px;
+    object-fit:cover 
+}
+
+.eleven {
+    width:150px;
+    height:135px;
+    object-fit:cover
+}
+
+.twelve {
+    width:175px;
+    height:175px;
+    object-fit:cover
+}

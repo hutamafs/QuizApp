@@ -4,12 +4,14 @@ import store from './store';
 import Home from './screens/Home';
 import Name from './screens/Name';
 import Finish from './screens/Finish';
+import Navbar from './screens/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
+        <Navbar/>
         <Switch>
           <Route path='/finish' component={Finish} />
           <Route path='/home' component={Home} />
