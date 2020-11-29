@@ -22,7 +22,7 @@ const Three = () => {
     }
 
     return (
-        <Container className="bg-secondary" style={{height:'50vh'}}>
+        <Container className="bg-secondary" style={{height:'30vh'}}>
            <Container className="d-flex justify-content-center border">
                 <h4> Bahasa inggris dari <b><i>'binatang'</i></b> </h4>
            </Container>

@@ -1,56 +1,56 @@
 import React, { useState , useEffect} from 'react';
 import { useDispatch , useSelector } from 'react-redux';
 import { Container , Button , Alert} from 'react-bootstrap';
-import { setPageScore , setUserAnswer } from '../store/actions/pageAction';
-import { One , Two , Three , Four} from '.';
+import { setPageScore , setUserAnswer , setQuestions , setGameScore } from '../store/actions/pageAction';
+import { useHistory } from 'react-router-dom';
+import Toast from '../helpers'
 
 const Home = () => {
     const dispatch = useDispatch();
-    const { userAnswer , pageScore } = useSelector(state => state);
+    const history = useHistory();
+    const { userAnswer , pageScore , questions } = useSelector(state => state);
     const [score,setScore] = useState(0);
-    const [questions,setQuestions] = useState([<One/>,<Two/>,<Three/>,<Four/>])
     const [position,setPosition] = useState(0);
     const [alert,setUserAlert] = useState(false);
 
-    // useEffect(() => {
-    //     shuffleQuestions()
-    // },[])
+    useEffect(() => {
+        dispatch(setQuestions())
+    },[])
 
     const handleNext = () => {
+        let newPosition = null;
+        let newScore = null;
         if(userAnswer) {
-            console.log('next');
-            let newPosition = position+1;
+            newPosition = position+1;
             setPosition(newPosition);
             dispatch(setPageScore(null));
             dispatch(setUserAnswer(null));
             setUserAlert(false);
-        } else if(userAnswer == null) {
+
+            if(pageScore) {
+                newScore = score + 1;
+                setScore(newScore);
+                Toast.fire({
+                    icon: 'success',
+                    title: 'jawaban kamu benar'
+                  })
+            } else {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'jawaban kamu salah'
+                  })
+            }
+
+        } else if(userAnswer === null) {
             setUserAlert(true);
-            shuffleQuestions()
         }
 
-        if(pageScore) {
-            let newScore = score + 1
-            setScore(newScore)
-        }
-    }
-
-    const shuffleQuestions = () => {
-        let clonedQuestions = questions.map((el,i) => {
-            return el;
-        })
-        let currentIndex = clonedQuestions.length, temporaryValue, randomIndex;
-        while (0 !== currentIndex) {
-
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
         
-            temporaryValue = clonedQuestions[currentIndex];
-            clonedQuestions[currentIndex] = clonedQuestions[randomIndex];
-            clonedQuestions[randomIndex] = temporaryValue;
-          }
-          console.log(clonedQuestions,'ini line 52');
-        return setQuestions(clonedQuestions)
+
+        if(newPosition === 10) {
+            dispatch(setGameScore(newScore))
+            history.push('/finish')
+        }
     }
 
     return (
@@ -60,22 +60,20 @@ const Home = () => {
                 Halo , coba diisi dulu ya
             </Alert>
             }
-            <Container className="bg-primary" style={{marginTop:50,height:'70vh',width:'50%'}}>
-                <Container className="d-flex justify-content-center">
-                    <h3 className="mt-3">Soal ke {position+1} </h3>
-                </Container>
-                    <h3 className="text-center">Score kamu sekarang {score} </h3>
+            <Container style={{marginTop:50,height:'75vh',width:'50%',position:'relative',backgroundColor:'grey'}}>
+                <h3 className="mt-3">Question {position+1} </h3>
+                <h3 className="text-center">Score : {score} </h3>
                 <Container style={{marginTop:10}}>
                     {questions[position]}
                 </Container>
-                <Container>
-                    <Button
-                    variant="primary"
-                    onClick={handleNext}
-                    >
-                    Next
-                    </Button>
-                </Container>
+                <Button
+                variant="primary"
+                onClick={handleNext}
+                size="lg"
+                style={{position:'absolute',right:235,bottom:30}}
+                >
+                Submit
+                </Button>
             </Container>
         </Container>
         

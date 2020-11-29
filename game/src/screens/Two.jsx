@@ -22,7 +22,7 @@ const Two = () => {
     }
 
     return (
-        <Container className="bg-secondary" style={{height:'50vh'}}>
+        <Container className="bg-secondary" style={{height:'30vh'}}>
            <Container className="d-flex justify-content-center border">
                 <h2>Indonesia merdeka tahun </h2>
            </Container>
