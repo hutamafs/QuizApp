@@ -16,10 +16,7 @@ const Six = () => {
         } else {
             dispatch(setPageScore(false));
         }
-
-        if(v) {
-            dispatch(setUserAnswer(v))
-        }
+        dispatch(setUserAnswer(v))    
     }
 
     const options = [
