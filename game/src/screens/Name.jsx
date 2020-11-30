@@ -29,7 +29,7 @@ const Name = () => {
             <h1 className="text-center">Nama kamu </h1>
             <input type="text" value={name} placeholder="Your name" onChange={(e) => setUserName(e.target.value)} className="pl-3 input-type" id=""/>
             <Container className="d-flex justify-content-center mt-3">
-            <Button variant='primary'style={{width:'15%'}} onClick={handleClick} > Submit </Button>
+            <Button variant='outline-primary'style={{width:'15%'}} onClick={handleClick} > Submit </Button>
             </Container>
         </Container>
     )

@@ -83,7 +83,7 @@ const Home = () => {
     }
 
     return (
-        <div className="container-fluid px-0">
+        <div className="container-fluid px-0 pb-4">
             <Container className="d-flex justify-content-center">
                 {alert &&
                 <Alert variant="danger" className="text-center mt-4" style={{width:'100%'}} >

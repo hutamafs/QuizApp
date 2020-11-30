@@ -37,7 +37,7 @@ const Nine = () => {
                     (pageAnswer === i) ? 'outline-success' : 'outline-dark'
                 }
                 >
-                    <img src={el} className="nine" alt=""/>
+                    <img src={el} className="nine pr-1" alt=""/>
                 </Button>
             )
         })

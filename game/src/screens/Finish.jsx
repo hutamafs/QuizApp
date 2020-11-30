@@ -31,7 +31,7 @@ const Finish = () => {
                 }
             </Container>
             <Container>
-                <Button variant="primary" onClick={handleBack}> Kerjakan kuis lagi </Button>
+                <Button variant="outline-primary" onClick={handleBack}> Kerjakan kuis lagi </Button>
             </Container>
         </Container>
     )
