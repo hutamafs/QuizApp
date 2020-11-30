@@ -15,10 +15,7 @@ const One = () => {
         } else {
             dispatch(setPageScore(false));
         }
-
-        if(e.target.value) {
-            dispatch(setUserAnswer(e.target.value))
-        }
+        dispatch(setUserAnswer(e.target.value))     
     }
 
     return (

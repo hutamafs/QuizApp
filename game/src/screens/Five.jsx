@@ -15,7 +15,7 @@ const Five = () => {
         } else {
             dispatch(setPageScore(false));
         }
-        dispatch(setUserAnswer(v));       
+        dispatch(setUserAnswer(true));       
     }
 
     const options = [12.03,1.85,13.7,5.678]

@@ -15,7 +15,7 @@ const Nine = () => {
         } else {
             dispatch(setPageScore(false));
         }
-        dispatch(setUserAnswer(v))        
+        dispatch(setUserAnswer(true))        
     }
 
     const options = [
